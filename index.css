@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+button{
+    background:linear-gradient(45deg,black,rgb(246, 107, 76));
+    color: white;
+    border-radius: 12px;
+    padding:8px;
+    margin: 5px;
+    border:black solid 3px;
+    width: 100px;
+    height: 65px;
+
+}
+button:hover{
+    background:linear-gradient(225deg,black,rgb(172, 56, 30));
+    transform: scale(1.05);
+}
+
+input{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    height: 20px;
+    background-color: aliceblue;
+}
