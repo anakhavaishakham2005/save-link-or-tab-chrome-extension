@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
+    min-width:400px;
 }
 
 button{
@@ -31,3 +32,16 @@ input{
     height: 20px;
     background-color: aliceblue;
 }
+
+li{
+    margin:4px;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: rgb(63, 17, 17);
+    text-decoration: none;}
