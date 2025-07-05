@@ -1,52 +1,257 @@
-body{
-    margin:0;
-    padding: 10px;
+/* Import Google Fonts: Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 24px 16px;
+    min-width: 350px;
+    background: linear-gradient(120deg, #f8fafc 0%, #e0eafc 100%);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #222;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap:wrap;
-    flex-direction: row;
-    min-width:400px;
+    flex-direction: column;
+    align-items: center;
 }
 
-button{
-    background:linear-gradient(45deg,black,rgb(246, 107, 76));
-    color: white;
-    border-radius: 12px;
-    padding:5px;
-    font-weight: bolder;
-    font-style: italic;
-    text-spacing-trim:space-all;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 5px;
-    border:black solid 3px;
-    width: 100px;
-    height: 65px;
-
-}
-button:hover{
-    background:linear-gradient(225deg,black,rgb(172, 56, 30));
-    transform: scale(1.05);
-}
-
-input{
-    border: 3px solid black;
-    border-radius: 8px;
-    padding: 5px;
-    margin: 5px;
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border: none;
+    padding: 24px 20px 18px 20px;
     width: 100%;
-    height: 20px;
-    background-color: aliceblue;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-li{
-    margin:4px;
+input[type="text"], .form-control {
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    font-size: 1rem;
+    background: #f1f5f9;
+    transition: border 0.2s;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
-ul{
-    list-style-type: none;
+input[type="text"]:focus, .form-control:focus {
+    border: 2px solid #38bdf8;
+    outline: none;
+    background: #fff;
+}
+
+.btn-primary, button.btn-primary {
+    background: linear-gradient(90deg, #38bdf8 0%, #06b6d4 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+    transition: background 0.2s, transform 0.1s;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.btn-primary:hover, button.btn-primary:hover {
+    background: linear-gradient(90deg, #06b6d4 0%, #38bdf8 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.btn-delete, button.btn-delete {
+    background: linear-gradient(90deg, #f87171 0%, #fbbf24 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(248,113,113,0.08);
+    transition: background 0.2s, transform 0.1s;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.btn-delete:hover, button.btn-delete:hover {
+    background: linear-gradient(90deg, #ef4444 0%, #f59e42 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+ul {
+    list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+}
+li {
+    background: #f1f5f9;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    transition: background 0.2s;
+    word-break: break-all;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+li:hover {
+    background: #e0eafc;
+}
+a {
+    color: #06b6d4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
 }
 
-a{
-    color: rgb(63, 17, 17);
-    text-decoration: none;}
+@media (max-width: 400px) {
+    .card {
+        padding: 14px 4px 10px 4px;
+        max-width: 98vw;
+    }
+    body {
+        padding: 8px 2px;
+    }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* =========================
+   Base Styles & Layout
+   ========================= */
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    min-width: 350px;
+    background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================
+   Card Styles
+   ========================= */
+.card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem 1.25rem 1.25rem;
+    width: 100%;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.005);
+}
+
+/* =========================
+   Input Styles
+   ========================= */
+input[type="text"], .form-control {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    margin-bottom: 0.875rem;
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+}
+input[type="text"]:focus, .form-control:focus {
+    border-color: #0ea5e9;
+    background: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.25);
+    outline: none;
+}
+
+/* =========================
+   Button Styles
+   ========================= */
+.btn-primary, button.btn-primary {
+    background: linear-gradient(90deg, #0ea5e9 0%, #0284c7 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.625rem 0;
+    margin-bottom: 0.625rem;
+    box-shadow: 0 2px 10px rgba(14, 165, 233, 0.2);
+    transition: background 0.3s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0284c7 0%, #0ea5e9 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.btn-delete, button.btn-delete {
+    background: linear-gradient(90deg, #ef4444 0%, #f59e0b 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.625rem 0;
+    margin-bottom: 0.625rem;
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.2);
+    transition: background 0.3s ease, transform 0.15s ease;
+}
+.btn-delete:hover {
+    background: linear-gradient(90deg, #dc2626 0%, #fbbf24 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* =========================
+   List & Link Styles
+   ========================= */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+li {
+    background: #f1f5f9;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+    word-break: break-word;
+}
+li:hover {
+    background: #e0e7ff;
+}
+a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: #0ea5e9;
+    text-decoration: underline;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 400px) {
+    .card {
+        padding: 1rem 0.5rem 0.75rem;
+        max-width: 98vw;
+    }
+    body {
+        padding: 1rem 0.5rem;
+    }
+}
