@@ -37,24 +37,28 @@ inputBtn.addEventListener("click",function(){
     localStorage.setItem("myLeads",JSON.stringify(myLeads))
     renderLeads(myLeads)
 })
+function renderLeads(leads) {
+    let listItems = "";
+    for (let i = 0; i < leads.length; i++) {
+        listItems += `
+            <li class="d-flex justify-content-between align-items-center">
+                <a target='_blank' href='${leads[i]}'>
+                    ${leads[i]}
+                </a>
+                <button class="btn btn-sm btn-outline-danger ms-2 btn-remove" data-index="${i}" title="Delete this link">&times;</button>
+            </li>
+        `;
+    }
+    ulEl.innerHTML = listItems;
 
-function renderLeads(leads){  
-let listItems=""
-for(let i=0;i<leads.length;i++)
-       {
-        //ulEl.innerHTML+= "<li>"+myLeads[i]+"</li> "
-        //or here we create a new li element,set text content and then append it.
-        // const li=document.createElement("li")
-        // li.textContent=myLeads[i]
-        // ulEl.append(li)//or
-        listItems+= `
-        <li>
-        <a target='_blank' href='${leads[i]}'>
-        ${leads[i]}
-        </a>
-        </li> 
-        `
-       }
-
-ulEl.innerHTML=listItems
+    // Add event listeners to all remove buttons
+    const removeButtons = document.querySelectorAll('.btn-remove');
+    removeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            myLeads.splice(index, 1);
+            localStorage.setItem("myLeads", JSON.stringify(myLeads));
+            renderLeads(myLeads);
+        });
+    });
 }
